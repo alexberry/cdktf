@@ -6,3 +6,21 @@ Start off by running through [this tutorial](https://developer.hashicorp.com/ter
 
 * Create a docker image that can be used to execute against my code
 * A make file to run the build, either with docker directly or with docker-compose
+
+## Dev container
+
+Have built a basic [dev container](./Dockerfile) including:
+* Terraform CLI
+* Terraform CDK
+* Python 3.10 (courtesy of Ubuntu 22.04)
+* pip3
+
+Build it with:
+```
+docker build . -t cdktf-cli
+```
+
+Run with :
+```
+docker run -it -v $(pwd)/src:/src cdktf-cli
+```
